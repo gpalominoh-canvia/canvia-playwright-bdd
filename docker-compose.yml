@@ -1,0 +1,21 @@
+# Entorno del alumno: VS Code en el navegador con Node y Playwright (Chromium) ya instalados.
+# Uso: iniciar-entorno.bat (Windows) o ./iniciar-entorno.sh (macOS/Linux).
+name: canvia-playwright
+
+services:
+  entorno:
+    build:
+      context: .
+      dockerfile: docker/alumnos/Dockerfile
+    image: canvia/entorno-playwright:1.0
+    container_name: canvia-playwright
+    ports:
+      - "127.0.0.1:8801:8080"
+    volumes:
+      - .:/workspace
+      - node-modules:/workspace/node_modules
+    ipc: host                 # recomendado por Playwright para Chromium
+    restart: unless-stopped
+
+volumes:
+  node-modules:
