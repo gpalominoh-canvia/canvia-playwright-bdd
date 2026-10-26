@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    name: typecheck + cucumber
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+
+      - run: npm run typecheck
+
+      - name: Ejecutar escenarios
+        run: npm test
+
+      - name: Publicar reporte de Cucumber
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: reporte-cucumber
+          path: reports/
