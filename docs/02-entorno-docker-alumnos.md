@@ -1,5 +1,7 @@
 # Entorno listo en Docker (para alumnos)
 
+> Versión para imprimir: [PDF con formato Canvia](pdf/manual-entorno-docker-playwright.pdf).
+
 Si tu PC no logra instalar Node o el navegador de Playwright (permisos, proxy, versión vieja), usa este entorno:
 con **un doble clic** levanta un contenedor con Node, Playwright + Chromium y VS Code con las extensiones del
 curso, y lo abre en tu navegador. Trabajas sobre los archivos de esta misma carpeta.
