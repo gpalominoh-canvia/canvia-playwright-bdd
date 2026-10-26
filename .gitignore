@@ -1,0 +1,12 @@
+node_modules/
+reports/
+test-results/
+playwright-report/
+
+# Entorno local y notas privadas
+.claude/
+CLAUDE.md
+*.local.md
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
