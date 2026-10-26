@@ -1,5 +1,7 @@
 # Sílabo · Pruebas Web con Playwright + Screenplay + Cucumber
 
+> Versión para imprimir: [PDF con formato Canvia](pdf/silabo-playwright-screenplay.pdf).
+
 > Parte 2 del curso de QA Automation de Canvia. 100 % práctico: cada sesión termina con código tuyo en verde y un Pull Request.
 
 | | |
